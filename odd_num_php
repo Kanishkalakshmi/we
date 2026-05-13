@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd Numbers</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            text-align:center;
+            margin-top:50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Two Digit Odd Numbers</h2>
+
+    <?php
+
+        for($i=11;$i<=99;$i=$i+2){
+
+            echo $i;
+
+            if($i<99){
+                echo ", ";
+            }
+
+        }
+
+    ?>
+
+</body>
+</html>
