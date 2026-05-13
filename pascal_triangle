@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pascal Triangle</title>
+</head>
+
+<body>
+
+    <h2>Pascal Triangle Generator</h2>
+
+    <input type="number" id="rows" placeholder="Enter number of rows">
+
+    <button onclick="generateTriangle()">Generate</button>
+
+    <pre id="result"></pre>
+
+    <script>
+
+        function generateTriangle(){
+
+            let n=parseInt(document.getElementById("rows").value);
+
+            let output="";
+
+            for(let i=0;i<n;i++){
+
+                let num=1;
+
+                for(let j=0;j<=i;j++){
+
+                    output=output+num+" ";
+
+                    num=num*(i-j)/(j+1);
+
+                }
+
+                output=output+"\n";
+
+            }
+
+            document.getElementById("result").innerHTML=output;
+
+        }
+
+    </script>
+
+</body>
+</html>
