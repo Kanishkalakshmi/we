@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        table{
+            margin:auto;
+            border-collapse:collapse;
+        }
+
+        td,th{
+            border:1px solid black;
+            padding:10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>9 Multiplication Table</h2>
+
+    <table>
+
+        <tr>
+            <th>Expression</th>
+            <th>Result</th>
+        </tr>
+
+        <?php
+
+            for($i=1;$i<=10;$i++){
+
+                echo "<tr>";
+                echo "<td>9 x ".$i."</td>";
+                echo "<td>".(9*$i)."</td>";
+                echo "</tr>";
+
+            }
+
+        ?>
+
+    </table>
+
+</body>
+</html>
