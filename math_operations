@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Operations</title>
+</head>
+
+<body>
+
+    <h2>Math Operations</h2>
+
+    <input type="number" id="number" placeholder="Enter a number">
+
+    <button onclick="findSin()">Sin</button>
+    <button onclick="findCos()">Cos</button>
+    <button onclick="findTan()">Tan</button>
+    <button onclick="findLog()">Log</button>
+    <button onclick="findPow()">Square</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+
+        function findSin(){
+
+            let num=parseFloat(document.getElementById("number").value);
+
+            document.getElementById("result").innerHTML=
+            "Sin("+num+") = "+Math.sin(num);
+
+        }
+
+        function findCos(){
+
+            let num=parseFloat(document.getElementById("number").value);
+
+            document.getElementById("result").innerHTML=
+            "Cos("+num+") = "+Math.cos(num);
+
+        }
+
+        function findTan(){
+
+            let num=parseFloat(document.getElementById("number").value);
+
+            document.getElementById("result").innerHTML=
+            "Tan("+num+") = "+Math.tan(num);
+
+        }
+
+        function findLog(){
+
+            let num=parseFloat(document.getElementById("number").value);
+
+            document.getElementById("result").innerHTML=
+            "Log("+num+") = "+Math.log(num);
+
+        }
+
+        function findPow(){
+
+            let num=parseFloat(document.getElementById("number").value);
+
+            document.getElementById("result").innerHTML=
+            "Square of "+num+" = "+Math.pow(num,2);
+
+        }
+
+    </script>
+
+</body>
+</html>
