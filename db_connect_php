@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        input{
+            padding:10px;
+            margin:10px;
+            width:250px;
+        }
+
+        button{
+            padding:10px 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Create Account</h2>
+
+    <form method="post">
+
+        <input type="text" name="username" placeholder="Enter Username" required><br>
+
+        <input type="email" name="email" placeholder="Enter Email" required><br>
+
+        <input type="password" name="password" placeholder="Enter Password" required><br>
+
+        <button type="submit" name="submit">Create Account</button>
+
+    </form>
+
+    <?php
+
+        $conn=mysqli_connect("localhost","root","","studentdb");
+
+        if(!$conn){
+            die("Connection Failed");
+        }
+
+        if(isset($_POST['submit'])){
+
+            $username=$_POST['username'];
+            $email=$_POST['email'];
+            $password=$_POST['password'];
+
+            $sql="INSERT INTO users(username,email,password)
+                  VALUES('$username','$email','$password')";
+
+            if(mysqli_query($conn,$sql)){
+                echo "<h3>Account Created Successfully</h3>";
+            }
+            else{
+                echo "<h3>Error</h3>";
+            }
+
+        }
+
+    ?>
+
+</body>
+</html>
