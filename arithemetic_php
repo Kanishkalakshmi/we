@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        input{
+            padding:10px;
+            margin:10px;
+            width:200px;
+        }
+
+        button{
+            padding:10px 20px;
+            margin:5px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Arithmetic Operations Using PHP</h2>
+
+    <form method="post">
+
+        <input type="number" name="num1" placeholder="Enter First Number" required><br>
+
+        <input type="number" name="num2" placeholder="Enter Second Number" required><br>
+
+        <button type="submit" name="add">Add</button>
+        <button type="submit" name="sub">Subtract</button>
+        <button type="submit" name="mul">Multiply</button>
+        <button type="submit" name="div">Divide</button>
+
+    </form>
+
+    <?php
+
+        function add($a,$b){
+            return $a+$b;
+        }
+
+        function sub($a,$b){
+            return $a-$b;
+        }
+
+        function mul($a,$b){
+            return $a*$b;
+        }
+
+        function divi($a,$b){
+            return $a/$b;
+        }
+
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+
+            $num1=$_POST['num1'];
+            $num2=$_POST['num2'];
+
+            if(isset($_POST['add'])){
+                echo "<h3>Addition = ".add($num1,$num2)."</h3>";
+            }
+
+            if(isset($_POST['sub'])){
+                echo "<h3>Subtraction = ".sub($num1,$num2)."</h3>";
+            }
+
+            if(isset($_POST['mul'])){
+                echo "<h3>Multiplication = ".mul($num1,$num2)."</h3>";
+            }
+
+            if(isset($_POST['div'])){
+                echo "<h3>Division = ".divi($num1,$num2)."</h3>";
+            }
+
+        }
+
+    ?>
+
+</body>
+</html>
